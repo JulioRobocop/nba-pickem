@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nbapickem-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: nbapickem
+      POSTGRES_USER: nbapickem
+      POSTGRES_PASSWORD: nbapickem123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
