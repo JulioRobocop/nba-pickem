@@ -3,9 +3,9 @@ spring:
     name: nbapickem
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/nbapickem
-    username: nbapickem
-    password: nbapickem123
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5433}/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:

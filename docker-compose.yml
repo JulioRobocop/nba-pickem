@@ -4,11 +4,11 @@ services:
     container_name: nbapickem-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: nbapickem
-      POSTGRES_USER: nbapickem
-      POSTGRES_PASSWORD: nbapickem123
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5433:5432"
+      - "${POSTGRES_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
